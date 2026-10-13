@@ -104,14 +104,20 @@ async function checkHealth() {
     const data = await res.json();
     if (data.database === 'connected') {
       elements.dbStatusText.textContent = 'MongoDB Atlas Connected';
-      elements.dbStatusBadge.style.color = '#34d399';
+      elements.dbStatusBadge.style.color = '#065f46';
+      elements.dbStatusBadge.style.backgroundColor = '#ecfdf5';
+      elements.dbStatusBadge.style.borderColor = '#a7f3d0';
     } else {
       elements.dbStatusText.textContent = 'MongoDB Connecting...';
-      elements.dbStatusBadge.style.color = '#fbbf24';
+      elements.dbStatusBadge.style.color = '#92400e';
+      elements.dbStatusBadge.style.backgroundColor = '#fef3c7';
+      elements.dbStatusBadge.style.borderColor = '#fcd34d';
     }
   } catch (err) {
     elements.dbStatusText.textContent = 'Backend Offline';
-    elements.dbStatusBadge.style.color = '#f87171';
+    elements.dbStatusBadge.style.color = '#991b1b';
+    elements.dbStatusBadge.style.backgroundColor = '#fee2e2';
+    elements.dbStatusBadge.style.borderColor = '#fca5a5';
   }
 }
 
